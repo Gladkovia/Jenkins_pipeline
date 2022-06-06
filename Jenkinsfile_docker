@@ -1,0 +1,19 @@
+#!groovy
+//Run Docker Kebernetes
+propertis
+pipeline {
+  agent {
+    kubernetes {
+    }
+  options {
+    timestamps()
+  }
+  stage("create docker image") {
+            steps {
+                echo " ============== start building image =================="
+                dir ('docker/toolbox') {
+                	sh 'docker build . '
+                }
+            }
+        }
+    }
