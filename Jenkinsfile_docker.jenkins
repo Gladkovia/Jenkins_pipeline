@@ -17,8 +17,8 @@ pipeline {
   stages {
     stage('Run toolbox') {
       steps {
-        container('maven') {
-          sh 'mvn -version'
+        container('gladkovian') {
+          sh 'curl 172.0.0.1'
         }
       }
     }
