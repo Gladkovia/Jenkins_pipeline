@@ -8,12 +8,24 @@ pipeline {
   options {
     timestamps()
   }
-  stage("create docker image") {
-            steps {
-                echo " ============== start building image =================="
-                dir ('docker/toolbox') {
-                	sh 'docker build . '
+  yaml '''
+        apiVersion: v1
+        kind: Pod
+        spec:
+          containers:
+          - name: toolbox
+            image: docker/toolbox
+            command:
+            - cat
+            tty: true
+        '''
+
                 }
             }
         }
-    }
+//    }
+//    stage("create docker image") {
+//              steps {
+//                  echo " ============== start building image =================="
+//                  dir ('docker/toolbox') {
+//                    sh 'docker build . '
