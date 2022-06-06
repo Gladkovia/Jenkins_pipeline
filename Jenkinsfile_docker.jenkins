@@ -18,7 +18,7 @@ pipeline {
     stage('Run toolbox') {
       steps {
         container('gladkovian') {
-          sh 'curl 172.0.0.1'
+//          sh 'pwd'
         }
       }
     }
