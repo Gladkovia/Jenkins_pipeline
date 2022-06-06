@@ -1,13 +1,13 @@
 #!groovy
 //Run Docker Kebernetes
-propertis
-pipeline {
+//propertis
+ pipeline {
   agent {
     kubernetes {
-    }
-  options {
-    timestamps()
-  }
+//    }
+//  options {
+//    timestamps()
+//  }
   yaml '''
         apiVersion: v1
         kind: Pod
@@ -22,7 +22,7 @@ pipeline {
 
                 }
             }
-//        }
+        }
 //    }
 //    stage("create docker image") {
 //              steps {
