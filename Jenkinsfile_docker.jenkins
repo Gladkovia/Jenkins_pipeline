@@ -18,7 +18,11 @@ pipeline {
     stage('Run toolbox') {
       steps {
         container('gladkovian') {
+<<<<<<< HEAD
 //          sh 'pwd'
+=======
+          sh 'pwd'
+>>>>>>> c194b6b2fdfc962813697ed85480b279488a8ba5
         }
       }
     }
